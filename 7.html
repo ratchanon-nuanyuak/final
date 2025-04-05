@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>แปลงเวลา</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        label, input, button {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #006600;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>กรุณากรอกเวลาในรูปแบบ hh:mm:ss</h2>
+
+    <label for="timeInput">เวลา:</label>
+    <input type="text" id="timeInput" placeholder="เช่น 14:30:45">
+    <button onclick="showTime()">แสดงผล</button>
+
+    <div id="result"></div>
+
+    <script>
+        function showTime() {
+            const timeStr = document.getElementById("timeInput").value;
+            const parts = timeStr.split(":");
+
+            if (parts.length === 3) {
+                let hh = parts[0];
+                let mm = parts[1];
+                let ss = parts[2];
+
+                let output = hh + " นาฬิกา " + mm + " นาที " + ss + " วินาที";
+                document.getElementById("result").textContent = output;
+            } else {
+                document.getElementById("result").textContent = "กรุณากรอกเวลาในรูปแบบ hh:mm:ss ให้ถูกต้อง";

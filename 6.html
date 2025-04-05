@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>แม่สูตรคูณของ 86</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f0f8ff;
+        }
+        h2 {
+            color: #0066cc;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>แม่สูตรคูณของเลข 86 จำนวน 15 ตัว</h2>
+    <ul id="multiplication-table"></ul>
+
+    <script>
+        let number = 86; // ตัวเลขจากรหัสนิสิต
+        let total = 15;  // จำนวนที่ต้องแสดง
+
+        let list = document.getElementById("multiplication-table");
+
+        for (let i = 1; i <= total; i++) {
+            let result = number * i;
+            let item = document.createElement("li");
+            item.textContent = number + " × " + i + " = " + result;
+            list.appendChild(item);
+        }
+    </script>
+
+</body>
+</html>
